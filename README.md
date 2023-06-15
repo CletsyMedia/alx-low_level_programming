@@ -20,7 +20,7 @@
 <li>All files is compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89</li>
 <li>Editors to be used <strong>vi, vim emacs</strong></li>
 <li>README.md file at the root of the alx-low_level_programming and subdirectories.</li>
-<li>All files must be in conformity with Betty style</li>
+<li>All C programming files/codes must be in conformity with Betty style</li>
 
 <h2>Author</h2>
 <p>&copy; All Rights Reserved <a href="https://cletsymedia.github.io/Prof-Portfolio/">Cletus Samuel</a></p>
