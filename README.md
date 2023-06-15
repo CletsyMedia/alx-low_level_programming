@@ -9,7 +9,7 @@
   This repo will contain the solutions to the routine challenges from ALX-SE Programme.
 </p>
 <a href="https://www.example.com/data-science">
-  <img src="https://img.shields.io/badge/Topic-Covered%20-blue" alt="Badge" title="Introduction to C Programming">
+  <img src="https://img.shields.io/badge/Topics-Covered%20-blue" alt="Badge" title="Introduction to C Programming">
 </a>
 <ul>
 <li>Hello_world</li>
@@ -18,13 +18,11 @@
 </ul>
 
 <h1>Prerequisites</h1>
-<ul>
-<p><a href="https://www.pdfdrive.com/sams-teach-yourself-c-in-24-hours-e17514248.html">Sam Teach Yourself C in 24 Hours</a></p>
+<li><a href="https://www.pdfdrive.com/sams-teach-yourself-c-in-24-hours-e17514248.html">Sam Teach Yourself C in 24 Hours</a></li>
 <li>All files is compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89</li>
 <li>Editors to be used <strong>vi, vim emacs</strong></li>
 <li>README.md file at the root of the alx-low_level_programming and subdirectories.</li>
 <li>All files must be in conformity with Betty style</li>
-</ul>
 
 <h2>Author</h2>
 <p>&copy; All Rights Reserved <a href="https://cletsymedia.github.io/Prof-Portfolio/">Cletus Samuel</a></p>
