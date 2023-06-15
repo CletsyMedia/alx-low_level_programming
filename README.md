@@ -19,7 +19,7 @@
 
 <h1>Prerequisites</h1>
 <ul>
-<li><a href="https://www.pdfdrive.com/sams-teach-yourself-c-in-24-hours-e17514248.html">Sam Teach Yourself C in 24 Hours</a><li>
+<p><a href="https://www.pdfdrive.com/sams-teach-yourself-c-in-24-hours-e17514248.html">Sam Teach Yourself C in 24 Hours</a></p>
 <li>All files is compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89</li>
 <li>Editors to be used <strong>vi, vim emacs</strong></li>
 <li>README.md file at the root of the alx-low_level_programming and subdirectories.</li>
