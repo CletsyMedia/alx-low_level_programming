@@ -9,7 +9,7 @@
   This repo will contain the solutions to the routine challenges from ALX-SE Programme.
 </p>
 <a href="https://www.example.com/data-science">
-  <img src="https://img.shields.io/badge/Topic-Data%20Science-blue" alt="Badge" title="Topics Covered">
+  <img src="https://img.shields.io/badge/Topic-Covered%20-blue" alt="Badge" title="Introduction to C Programming">
 </a>
 <ul>
 <li>Hello_world</li>
