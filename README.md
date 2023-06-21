@@ -14,9 +14,17 @@
 <li>Hello_world</li>
 <li>Variables_if_else_while</li>
 <li>Functions_nested_loops</li>
+<li>Debugging</li>
+<li>More_functions_nested_loops</li>
+<li>Pointers_arrays_strings</li>
+<li>Recursion</li>
+<li>Static_libraries</li>
+<li></li>
+<li></li>
 
 <h1>Prerequisites</h1>
 <li><a href="https://www.pdfdrive.com/sams-teach-yourself-c-in-24-hours-e17514248.html">Sam Teach Yourself C in 24 Hours</a></li>
+<li><a href="https://www.tutorialspoint.com/cprogramming/c_functions.htm">More About C - Functions</a></li>
 <li>All files is compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89</li>
 <li>Editors to be used <strong>vi, vim emacs</strong></li>
 <li>README.md file at the root of the alx-low_level_programming and subdirectories.</li>
