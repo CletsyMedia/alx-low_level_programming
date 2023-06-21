@@ -31,4 +31,4 @@
 <li>All C programming files/codes must be in conformity with Betty style</li>
 
 <h2>Author</h2>
-<p>&copy; All Rights Reserved <a style="text-decoration:none;" title="Web Developer" href="https://cletsymedia.github.io/Prof-Portfolio/">Cletus Samuel</a></p>
+<p>&copy; All Rights Reserved <a title="Web Developer" href="https://cletsymedia.github.io/Prof-Portfolio/">Cletus Samuel</a></p>
