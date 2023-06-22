@@ -5,20 +5,26 @@
  */
 void print_triangle(int size)
 {
-	int triagle1, triagle2;
-
-	if (size > 0)
+	if (size <= 0)
 	{
-		for (triagle1 = 1; triagle1 <= size; triagle1++)
-		{
-			for (triagle2 = size; triagle2 >= 1; triagle2--)
-				if (triagle1 < triagle2)
-					_putchar(' ');
-				else
-					_putchar('#');
-					_putchar('\n');
-		}
+	_putchar('\n');
 	}
 	else
-		_putchar('\n');
+	{
+	int triagle1, triagle2;
+
+	for (triagle1 = 1; triagle1 <= size; triagle1++)
+	{
+	for (triagle2 = triagle1; triagle2 < size; triagle2++)
+	{
+	_putchar(' ');
+	}
+	for (triagle2 = 1; triagle2 <= triagle1; triagle2++)
+	{
+	_putchar('#');
+	}
+	_putchar('\n');
+	}
+	}
 }
+
