@@ -7,17 +7,21 @@
 
 void print_square(int size)
 {
-	int sqr1, sqr2;
-
-	if (size > 0)
-	{
-		for (sqr1 = 0; sqr1 < size; sqr1++)
-		{
-			for (sqr2 = 0; sqr2 < size; sqr2++)
-				putchar('#');
-				putchar('\n');
-		}
-	}
-	else
+if (size <= 0)
+{
 	putchar('\n');
+}
+else
+{
+		int sqr1, sqr2;
+
+	for (sqr1 = 0; sqr1 < size; sqr1++)
+	{
+		for (sqr2 = 0; sqr2 < size; sqr2++)
+		{
+			putchar('#');
+		}
+			putchar('\n');
+	}
+}
 }
