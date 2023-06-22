@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_triangle - Prints a triangle using terminal lines with #s,
- * @size: Determines the number of triange*
+ * @size: Determines the size of triange*
  */
 void print_triangle(int size)
 {
@@ -13,12 +13,12 @@ void print_triangle(int size)
 		{
 			for (triagle2 = size; triagle2 >= 1; triagle2--)
 				if (triagle1 < triagle2)
-					putchar(' ');
+					_putchar(' ');
 				else
-					putchar('#');
-					putchar('\n');
+					_putchar('#');
+					_putchar('\n');
 		}
 	}
 	else
-		putchar('\n');
+		_putchar('\n');
 }
