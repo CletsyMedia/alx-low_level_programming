@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * puts2 - This function prints every character of a string
+ * puts2 - This function prints every character of an even string
  *
  * @str: The string parameter input
  *
