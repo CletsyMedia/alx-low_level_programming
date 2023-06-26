@@ -7,10 +7,10 @@
 
 int _strlen(char *s)
 {
-	int countStr;
+	int len;
 
-	for (countStr = 0; *s != '\0'; s++)
-		countStr++;
+	for (len = 0; *s != '\0'; s++)
+		len++;
 
-		return (countStr);
+		return (len);
 }
