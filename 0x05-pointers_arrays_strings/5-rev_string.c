@@ -20,11 +20,10 @@ void rev_string(char *s)
 	/**
 	 * This copy characters from revStr back to s in reverse order
 	*/
-	for (; i >= 0; i--)
+	for (j = 0; i >= 0; i--, j++)
 	{
 		s[i] = revStr[j];
-		j++;
 	}
-	s[j++] = '\0';
+	s[j] = '\0';
 
 }
