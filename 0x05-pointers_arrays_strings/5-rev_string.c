@@ -13,10 +13,8 @@ void rev_string(char *s)
 	j = 0;
 	/* This loop iterates over i from 0 until s[i] is equal to '\0' */
 	for (i = 0; s[i] != '\0'; i++)
-	{
 		revStr[i] = s[i];
-	}
-	i--;
+		i--;
 	/**
 	 * This copy characters from revStr back to s in reverse order
 	*/
