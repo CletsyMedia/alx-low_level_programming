@@ -8,20 +8,19 @@
 void rev_string(char *s)
 {
 	int i, j;
-	char revStr[100];
+	char revStr;
 
-	j = 0;
 	/* This loop iterates over i from 0 until s[i] is equal to '\0' */
 	for (i = 0; s[i] != '\0'; i++)
-		revStr[i] = s[i];
-		i--;
+		;
 	/**
 	 * This copy characters from revStr back to s in reverse order
 	*/
-	for (j = 0; i >= 0; i--, j++)
+	for (j = 0; j < i / 2; j++)
 	{
-		s[i] = revStr[j];
+		revStr = s[j];
+		s[j] = s[i - 1 - j];
+		s[i - 1 - j] = revStr;
 	}
-	s[j] = '\0';
 
 }
