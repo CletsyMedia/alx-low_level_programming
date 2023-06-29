@@ -15,20 +15,24 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int r;
+	int i = 0, r;
 
 	/**
-	 * Iterate through s1 and s2
-	 * and compare each character
+	 * iterate through src and
+	 * compare it with dest
 	 */
-	for (int i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
 		/**
-		 * If they differ by a single character,
-		 * assign the difference to r and break the loop
+		 * if they differ by a single character
+		 * don't iterate further
 		 */
 		if (s1[i] != s2[i])
 		{
+			/**
+			 * return the difference between
+			 * the two characters
+			 */
 			r = s1[i] - s2[i];
 			break;
 		}
@@ -36,7 +40,7 @@ int _strcmp(char *s1, char *s2)
 		{
 			r = s1[i] - s2[i];
 		}
+		i++;
 	}
-
 	return (r);
 }
