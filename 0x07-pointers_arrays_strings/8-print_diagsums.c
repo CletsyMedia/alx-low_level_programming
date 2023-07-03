@@ -1,3 +1,4 @@
+#include<stdio.h>
 #include"main.h"
 /**
  * print_diagsums - Prints the sum of the diagonals of a square
