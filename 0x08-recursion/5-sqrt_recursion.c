@@ -3,7 +3,7 @@
  * find_result - finds the input from n to the base
  * @n: number is squared and compared against base
  *@finder: finds number to check
- * Return: natural square of	n
+ * Return: natural square root of	n
 */
 int find_result(int n, int finder)
 {
