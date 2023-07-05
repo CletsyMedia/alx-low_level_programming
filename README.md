@@ -19,6 +19,9 @@
 <li>Pointers_arrays_strings</li>
 <li>Recursion</li>
 <li>Static_libraries</li>
+<li>Argc_argv</li>
+<li>Malloc_free</li>
+<li>Preprocessor</li>
 <li></li>
 <li></li>
 
