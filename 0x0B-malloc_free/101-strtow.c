@@ -44,42 +44,43 @@ int wordcounter(char *str, int pos, char firstchar)
  */
 char **strtow(char *str)
 {
-	char **matrix, *tmp;
-	int i, k = 0, len = 0, words, c = 0, start, end;
+	int wc, wordlen, getfirstchar, len, i, j;
+	char **p;
 
-	while (*(str + len))
-		len++;
-	words = count_word(str);
-	if (words == 0)
+	for (len = 0; str[len]; len++)
+		;
+	if (str == NULL)
 		return (NULL);
-
-	matrix = (char **) malloc(sizeof(char *) * (words + 1));
-	if (matrix == NULL)
+	wc = wordcounter(str, 0, 0);
+	if (len == 0 || wc == 0)
 		return (NULL);
-
-	for (i = 0; i <= len; i++)
+	p = malloc((wc + 1) * sizeof(void *));
+	if (p == NULL)
+		return (NULL);
+	for (i = 0, wordlen = 0; i < wc; i++)
 	{
-		if (str[i] == ' ' || str[i] == '\0')
+		/* Allocate memory for nested elements */
+		wordlen = wordcounter(str, i + 1, 0);
+		if (i == 0 && str[i] != ' ')
+			wordlen++;
+		p[i] = malloc(wordlen * sizeof(char) + 1);
+		if (p[i] == NULL)
 		{
-			if (c)
-			{
-				end = i;
-				tmp = (char *) malloc(sizeof(char) * (c + 1));
-				if (tmp == NULL)
-					return (NULL);
-				while (start < end)
-					*tmp++ = str[start++];
-				*tmp = '\0';
-				matrix[k] = tmp - c;
-				k++;
-				c = 0;
-			}
+			for ( ; i >= 0; --i)
+				free(p[i]);
+			free(p);
+			return (NULL);
 		}
-		else if (c++ == 0)
-			start = i;
+		/* initialize each element of the nested array with the word*/
+		getfirstchar = wordcounter(str, i + 1, 1);
+		if (str[0] != ' ' && i > 0)
+			getfirstchar++;
+		else if (str[0] == ' ')
+			getfirstchar++;
+		for (j = 0; j < wordlen; j++)
+			p[i][j] = str[getfirstchar + j];
+		p[i][j] = '\0';
 	}
-
-	matrix[k] = NULL;
-
-	return (matrix);
+	p[i] = NULL;
+	return (p);
 }
