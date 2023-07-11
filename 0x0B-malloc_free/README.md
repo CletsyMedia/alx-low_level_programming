@@ -1,1 +1,1 @@
-# Dynamic Memory Allocation in C Programmin
+# Dynamic Memory Allocation in C Programming
