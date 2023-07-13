@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -20,11 +21,8 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	/* Calculate the size of the range */
-	int size = max - min + 1;
-
 	/* Allocate memory for the array representing the range */
-	arrRng = malloc(size * sizeof(int));
+	arrRng = malloc((max - min + 1) * sizeof(int));
 	if (arrRng == NULL)
 		return (NULL);
 
