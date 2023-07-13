@@ -3,14 +3,16 @@
 #include <stdio.h>
 
 /**
- * _memset - Fills memory with a constant byte.
+ * _memset - fills memory with a constant byte
  *
- * @s: Pointer to the memory block to fill.
- * @b: Byte to fill the memory with.
- * @n: Number of bytes to fill.
+ * @s: input pointer that represents memory block
+ *     to fill
+ * @b: characters to fill/set
+ * @n: number of bytes to be filled
  *
- * Return: Pointer to the filled memory area.
+ * Return: pointer to the filled memory area
  */
+
 char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i = 0;
@@ -24,13 +26,15 @@ char *_memset(char *s, char b, unsigned int n)
 }
 
 /**
- * _calloc - Allocates memory for an array and initializes it to zero.
+ * _calloc - function that allocates memory
+ *           for an array using memset
  *
- * @nmemb: Size of the array.
- * @size: Size of each element.
+ * @nmemb: size of array
+ * @size: size of each element
  *
- * Return: Pointer to the newly allocated memory.
+ * Return: pointer to new allocated memory
  */
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *ptr;
@@ -45,14 +49,16 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	return (ptr);
 }
 
+
 /**
- * multiply - Multiplies two positive numbers represented as strings.
+ * multiply - initialize array with 0 byte
  *
- * @s1: String representation of the first number.
- * @s2: String representation of the second number.
+ * @s1: string 1
+ * @s2: string 2
  *
- * Return: Nothing.
+ * Return: nothing
  */
+
 void multiply(char *s1, char *s2)
 {
 	int i, l1, l2, total_l, f_digit, s_digit, res = 0, tmp;
@@ -65,7 +71,7 @@ void multiply(char *s1, char *s2)
 	total_l = l1 + l2;
 	ptr = _calloc(sizeof(int), total_l);
 
-	/* Store the pointer address to free it later */
+	/* store our pointer address to free later */
 	temp = ptr;
 
 	for (l1--; l1 >= 0; l1--)
@@ -96,16 +102,19 @@ void multiply(char *s1, char *s2)
 	free(temp);
 }
 
+
 /**
  * main - Entry point
  *
- * Description: A program that multiplies two positive numbers.
+ * Description: a program that multiplies
+ *            two positive numbers
  *
- * @argc: Number of arguments.
- * @argv: Array of arguments.
+ * @argc: number of arguments
+ * @argv: arguments array
  *
- * Return: 0 on success, 98 on failure.
+ * Return: 0 on success 98 on faliure
  */
+
 int main(int argc, char *argv[])
 {
 	char *n1 = argv[1];
