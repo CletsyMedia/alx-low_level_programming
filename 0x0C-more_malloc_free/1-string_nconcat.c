@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < bufferSize - 1; i++)
 		i < countStrn1 ? (strn[i] = s1[i]) : (strn[i] = s2[i - countStrn1]);
 
-	/* Add null-terminating character to the end of strn */
+	/* Add null-terminating character to the end of the strn */
 	strn[bufferSize - 1] = '\0';
 
 	return (strn);
