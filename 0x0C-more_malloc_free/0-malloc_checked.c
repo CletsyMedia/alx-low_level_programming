@@ -3,7 +3,7 @@
 /**
 	* malloc_checked - This allocates memory using malloc
 	* @b: This is the size of buffer
-	* Return: The pointer to buffer
+	* Return: The pointer to the buffer
 	*/
 void *malloc_checked(unsigned int b)
 {
