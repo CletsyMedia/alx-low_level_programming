@@ -1,0 +1,2 @@
+# Preprocessor
+The Preprocessor is a crucial part of C/C++ development. It handles directives like #include for file inclusion, #define for macros, and #if for conditional compilation. The Preprocessor's key role is text-based manipulation before compilation. It expands macros, controls code inclusion based on conditions, and generates custom error/warning messages using #error and #warning. Remember, it is just one stage in the compilation process, where modified code is sent to the compiler for translation into machine code, and then linked to create the final executable.
