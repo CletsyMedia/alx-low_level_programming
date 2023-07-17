@@ -7,7 +7,7 @@
  * @y: The second number.
  *
  * Description:
- * This function-like macro takes two numbers, 'x' and 'y', as input and computes
+ * This function-like macro takes two numbers, 'x' and 'y', and computes
  * their sum using the '+' operator. It returns the result of the addition.
  *
  * Return: The sum of the numbers 'x' and 'y'.
