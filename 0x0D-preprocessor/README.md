@@ -19,7 +19,8 @@ To use the code in this repository, follow these steps:
 
 ```bash
 git clone https://github.com/CletsyMedia/alx-low_level_programming.git
-cd alx-low_level_programming/0x0D-preprocessor/task_folder
+```
+```bash
 gcc -Wall -Werror -Wextra -pedantic -o output_file c_file.c
 ./output_file
 ```
