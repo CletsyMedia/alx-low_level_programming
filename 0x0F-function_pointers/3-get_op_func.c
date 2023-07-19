@@ -20,12 +20,13 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}	/* NULL terminator for the array, marks the end of operators */
 	};
 
-	/* Iterate through the ops array using a for loop */
-	for (int i = 0; i < 5; i++)
+	int i = 0;
+
+	while (i < 5)
 	{
-		/* If the input operator symbol matches the current ops entry */
 		if (*s == *ops[i].op)
-			return (ops[i].f); /* Return the corresponding function pointer */
+			return (ops[i].f);
+		i++;
 	}
 
 	return (NULL); /* Return NULL if no match is found */
