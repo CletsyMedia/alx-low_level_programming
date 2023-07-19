@@ -11,20 +11,25 @@
  *
  * This function searches for an integer in the 'array' by applying the
  * 'cmp' function to each element. If 'size' is zero or negative, or 'array'
- * or 'cmp' is NULL, it returns -1. Otherwise, it uses a for loop to iterate
- * through the array, calling 'cmp'. If 'cmp' returns a non-zero
- * value for an element, the index of that element is returned. If no element
- * satisfies the comparison function, the function returns -1.
+ * or 'cmp' is NULL, it returns -1. Otherwise, it uses a while loop to iterate
+ * through the array, calling 'cmp' for each element. If 'cmp' returns a value
+ * that evaluates to TRUE (non-zero), the index of that element is returned.
+ * If no element satisfies the comparison function, the function returns -1.
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	if (size <= 0 || array == NULL || cmp == NULL)
-		return (-1);
+	int index = 0;
+	bool y = FALSE;
 
-	for (int idx = 0; idx < size; idx++)
+	if (array != NULL && size > 0 && cmp != NULL)
 	{
-		if (cmp(array[idx]))
-			return (idx);
+		while (index < size)
+		{
+			y = cmp(array[index]);
+			if (y == TRUE)
+				return (index);
+			index++;
+		}
 	}
 
 	return (-1);
