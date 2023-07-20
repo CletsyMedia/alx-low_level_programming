@@ -22,7 +22,10 @@
 <li>Argc_argv</li>
 <li>Malloc_free</li>
 <li>Preprocessor</li>
-<li></li>
+<li>Structures_typedef</li>
+<li>Variadic_functions</li>
+<li>Singly_linked_lists</li>
+<li>Bit_manipulation</li>
 <li></li>
 
 <h1>Prerequisites</h1>
