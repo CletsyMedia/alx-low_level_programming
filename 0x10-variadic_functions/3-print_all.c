@@ -1,58 +1,51 @@
-#include <stdio.h>
-#include <stdarg.h>
+#include "variadic_functions.h"
 
 /**
- * print_all - Prints anything based on the provided format.
- * @format: The format string containing the types of arguments to be printed.
+ * print_all - prints anything.
+ * @format: a list of types of arguments passed to the function.
  *
- * Description: This function prints a variable number of arguments based on
- * the format string provided. It supports four types of arguments:
- * - 'c' for char
- * - 'i' for integer
- * - 'f' for float
- * - 's' for string
- * If a string argument is NULL, it prints "(nil)" instead.
+ * Return: no return.
  */
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	unsigned int idx = 0;
+	va_list valist;
+	unsigned int i = 0, j, c = 0;
 	char *str;
+	const char t_arg[] = "cifs";
 
-	va_start(args, format);
-
-	while (format && format[idx])
+	va_start(valist, format);
+	while (format && format[i])
 	{
-		switch (format[idx])
+		j = 0;
+		while (t_arg[j])
+		{
+			if (format[i] == t_arg[j] && c)
+			{
+				printf(", ");
+				break;
+			} j++;
+		}
+		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(args, int));
+				printf("%c", va_arg(valist, int)), c = 1;
 				break;
 			case 'i':
-				printf("%d", va_arg(args, int));
+				printf("%d", va_arg(valist, int)), c = 1;
 				break;
 			case 'f':
-				printf("%f", va_arg(args, double));
+				printf("%f", va_arg(valist, double)), c = 1;
 				break;
 			case 's':
-				str = va_arg(args, char *);
-				if (str != NULL)
-					printf("%s", str);
-				else
+				str = va_arg(valist, char *), c = 1;
+				if (!str)
+				{
 					printf("(nil)");
+					break;
+				}
+				printf("%s", str);
 				break;
-			default:
-				idx++;
-				continue;
-		}
-
-		if (format[idx + 1] != '\0')
-			printf(", ");
-
-		idx++;
+		} i++;
 	}
-
-	printf("\n");
-
-	va_end(args);
-}
+	printf("\n"), va_end(valist);
+} 
