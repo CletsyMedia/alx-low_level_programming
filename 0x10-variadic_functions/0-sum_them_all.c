@@ -24,4 +24,4 @@ int sum_them_all(const unsigned int n, ...)
 	va_end(ap);
 
 	return (sum);
-} 
+}
