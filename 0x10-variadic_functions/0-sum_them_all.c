@@ -1,31 +1,27 @@
 #include <stdarg.h>
 
 /**
- * sum_them_all - Calculates the sum of a variable number of integers.
- * @n: The number of integers to be summed.
- * @...: Variable arguments (integers) to be added.
+ * sum_them_all - adds all its parameters
  *
- * Return: The sum of the integers, or 0 if n is 0.
+ * @n: start of input variables
+ *
+ * Return: the sum
  */
+
 int sum_them_all(const unsigned int n, ...)
 {
-	if (n == 0)
-	{
-		return (0);
-	}
+	va_list ap;
+	unsigned int param, sum = 0;
 
-	int sum = 0;
+	/* initialize the argument list from the start */
+	va_start(ap, n);
 
-	va_list args;
-
-	va_start(args, n);
-
-	for (unsigned int i = 0; i < n; ++i)
-	{
-		sum += va_arg(args, int);
-	}
-	va_end(args);
+	/* iterate through all parameter values*/
+	for (param = 0; param < n; param++)
+		/* get the next parameter value and add it to sum*/
+		sum += va_arg(ap, int);
+	/*Clean up*/
+	va_end(ap);
 
 	return (sum);
-
-}
+} 
