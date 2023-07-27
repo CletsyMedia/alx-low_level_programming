@@ -66,3 +66,4 @@ list_t *add_node(list_t **head, const char *str)
 	/* Return the new head of the linked list (current position in the list) */
 	return (new);
 }
+
