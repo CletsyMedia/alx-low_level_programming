@@ -1,71 +1,53 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <stddef.h>
-/**
-  * _strlen - gets length of the string
-  * @s: string
-  * Return: length of the string
-  */
-int _strlen(const char *s)
-{
-	int i;
 
-	for (i = 0; s[i]; i++)
-		;
-	return (i);
-}
 /**
-  * _strdup - recreation of string duplicate function
-  * @src: source of string to duplicate
-  * Return: pointer to malloc'd space with copied string
-  */
-void *_strdup(const char *src)
-{
-	int len, i;
-	char *dest;
+ * add_node_end - adds a node at the end of the linked list
+ *
+ * @head: pointer to the first node of the list
+ * @str: string to add
+ *
+ * Return: NULL if it fails / starting addr of the list
+ */
 
-	len = _strlen(src);/* Get the length of the input string */
-  /* Allocate memory for the content of the new duplicate string */
-	dest = malloc((len + 1) * sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	for (i = 0; src[i]; i++)/* Copy the input string to the allocated memory */
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
-}
-/**
-  * add_node_end - add new nodes to the end of the list
-  * @head: current place in the list
-  * @str: string to add to the head
-  * Return: pointer to current position in list
-  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new, *current;
-	char *dupstr;
+	list_t *new_node, *temp;
+	size_t str_len = 0;
 
+	/*set strig length to 0 if its NULL*/
 	if (str == NULL)
-		return (NULL);
-	dupstr = _strdup(str);
-	if (dupstr == NULL)
-		return (NULL);
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
-		return (NULL);
-	new->str = dupstr;
-	new->len = _strlen(str);
-	new->next = NULL;
+		str_len = 0;
 
-	if (*head == NULL)
+	/*count length of string*/
+	while (str[str_len] != '\0')
+		str_len++;
+
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
+		return (NULL);
+
+	new_node->str = strdup(str);
+	new_node->len = str_len;
+	new_node->next = NULL;
+
+	/*copy our starting node pointer to temp*/
+	temp = *head;
+
+	/*if temp is NULL place our new_node at the beginning of the list*/
+	/*else if its not null we place our new_node to temp->next hence*/
+	/*adding our new_node at the end of the list*/
+	if (temp == NULL)
+		*head = new_node;
+	else
 	{
-		*head = new;
-		return (*head);
+		/**
+		 * we iterate pointer next addr if its not NULL our temp addr
+		 * points to the next addr or the next node.
+		 */
+		while (temp->next != NULL)
+			temp = temp->next;
+		temp->next = new_node;
 	}
-	current = *head;
-	while (current->next != NULL)
-		current = current->next;
-	current->next = new;
+
 	return (*head);
 }
