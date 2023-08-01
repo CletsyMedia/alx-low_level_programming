@@ -1,71 +1,68 @@
 #include "lists.h"
 
 /**
- * free_listp2 - frees a linked list
- * @head: head of a list.
+ * free_listp - Frees a linked list
+ * @head: Pointer to a pointer to the head of the list.
  *
- * Return: no return.
+ * Return: No return.
  */
-
-void free_listp2(listp_t **head)
+void free_listp(listp_t **head)
 {
-	listp_t *temp;
 	listp_t *current;
+	listp_t *next_node;
 
 	if (head != NULL)
 	{
 		current = *head;
-		while ((temp = current) != NULL)
+		while (current != NULL)
 		{
-			current = current->next;
-			free(temp);
+			next_node = current->next;
+			free(current);
+			current = next_node;
 		}
 		*head = NULL;
 	}
 }
-/**
- * free_listint_safe - frees a linked list.
- * @h: head of a list.
- *
- * Return: size of the list that was freed.
- */
-size_t free_listint_safe(listint_t **h)
-{
-	size_t nodes_freed = 0;
-	listp_t *freed_nodes = NULL;
-	listp_t *new_node, *check_node;
-	listint_t *current;
 
-	freed_nodes = NULL;
-	while (*h != NULL)
+/**
+ * print_listint_safe - Prints a linked list.
+ * @head: Pointer to the head of a list.
+ *
+ * Return: The number of nodes in the list.
+ */
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t node_count = 0;
+	listp_t *printed_nodes = NULL;
+	listp_t *new_node, *check_node;
+
+	while (head != NULL)
 	{
 		new_node = malloc(sizeof(listp_t));
 		if (new_node == NULL)
 			exit(98);
 
-		new_node->p = (void *)*h;
-		new_node->next = freed_nodes;
-		freed_nodes = new_node;
+		new_node->p = (void *)head;
+		new_node->next = printed_nodes;
+		printed_nodes = new_node;
 
-		check_node = freed_nodes;
+		check_node = printed_nodes;
 		while (check_node->next != NULL)
 		{
 			check_node = check_node->next;
-			if (*h == check_node->p)
+			if (head == check_node->p)
 			{
-				*h = NULL;
-				free_listp2(&freed_nodes);
-				return (nodes_freed);
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				free_listp(&printed_nodes);
+				return (node_count);
 			}
 		}
 
-		current = *h;
-		*h = (*h)->next;
-		free(current);
-		nodes_freed++;
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+		node_count++;
 	}
 
-	*h = NULL;
-	free_listp2(&freed_nodes);
-	return (nodes_freed);
+	free_listp(&printed_nodes);
+	return (node_count);
 }
