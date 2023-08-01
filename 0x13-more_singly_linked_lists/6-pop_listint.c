@@ -10,31 +10,27 @@
  */
 int pop_listint(listint_t **head)
 {
-	int pop;/* To store the value of the deleted head node */
-	listint_t *currNode, *temp;
+	int deleted_value; /* To store the value of the deleted head node */
+	listint_t *temp_node, *next_node;
 
 	/* Check if the linked list is empty or if the head is NULL */
-	if (head == NULL)
-
+	if (*head == NULL)
 		return (0);
 
-	/* Initialize temp and currNode to the head of the linked list */
-		temp = currNode = *head;
-		/* Check if the linked list has at least one node */
-	if (*head)
-	{
-		/* Store the value (n) of the head node to be deleted */
-		pop = currNode->n;
-		/* Move the head to the next node */
-		*head = currNode->next;
-		/* Free the memory allocated by the prev head node */
-		free(temp);
-	}
-	else
-	{
-		/* If the linked list is empty, set pop to 0 */
-		pop = 0;
+	/* Store the address of the head node in temp_node */
+	temp_node = *head;
 
-		return (pop);
-	}
+	/* Move the head pointer to the next node */
+	next_node = temp_node->next;
+
+	/* Store the value (n) of the head node to be deleted */
+	deleted_value = temp_node->n;
+
+	/* Free the memory occupied by the previous head node */
+	free(temp_node);
+
+	/* Update the head pointer to the next node */
+	*head = next_node;
+ /* Return the value of the deleted head node or 0 if the list was empty */
+	return (deleted_value);
 }
