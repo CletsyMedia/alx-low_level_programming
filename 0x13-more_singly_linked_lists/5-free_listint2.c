@@ -17,8 +17,7 @@ void free_listint2(listint_t **head)
 {
 	listint_t *Nodetemp, *currNode;
 
-	if (head == NULL)
-		return;
+	if (head != NULL)
 
 	/* Set currNode to point to the head of the list */
 	currNode = *head;
