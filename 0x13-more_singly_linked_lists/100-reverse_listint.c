@@ -8,21 +8,16 @@
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *prev = NULL; /* Pointer to keep track of the previous node */
-	listint_t *current = *head; /* Pointer to traverse the list */
-	listint_t *next = NULL; /* Temporary variable to store the next node */
+	listint_t *previous = NULL;
+	listint_t *currNode = NULL;
 
-	/* Traverse the list and reverse the pointers using a for loop */
-	for (; current != NULL; current = next)
+	for (; *head != NULL; *head = currNode)
 	{
-		next = current->next; /* Store the next node in a temporary variable */
-
-		current->next = prev; /* Reverse the pointer of the current node */
-
-		prev = current; /* Move the prev pointer to the current node */
+		currNode = (*head)->next;
+		(*head)->next = previous;
+		previous = *head;
 	}
-	/* Update the head to point to the last node */
-	*head = prev;
-	/* Return the new head of the reversed list */
+
+	*head = previous;
 	return (*head);
 }
