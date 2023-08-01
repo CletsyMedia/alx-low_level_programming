@@ -1,49 +1,49 @@
 #include "lists.h"
 
 /**
- * free_listp2_custom - frees a linked list
- * @head_ptr: head of a list.
+ * free_listp2 - frees a linked list
+ * @head: head of a list.
  *
  * Return: no return.
  */
-void free_listp2_custom(listp_t **head_ptr)
+void free_listp2(listp_t **head)
 {
 	listp_t *temp;
-	listp_t *current;
+	listp_t *curr;
 
-	if (head_ptr != NULL)
+	if (head != NULL)
 	{
-		current = *head_ptr;
-		while ((temp = current) != NULL)
+		curr = *head;
+		while ((temp = curr) != NULL)
 		{
-			current = current->next;
+			curr = curr->next;
 			free(temp);
 		}
-		*head_ptr = NULL;
+		*head = NULL;
 	}
 }
 
 /**
- * free_listint_safe_custom - frees a linked list.
- * @head: head of a list.
+ * free_listint_safe - frees a linked list.
+ * @h: head of a list.
  *
  * Return: size of the list that was freed.
  */
-size_t free_listint_safe_custom(listint_t **head)
+size_t free_listint_safe(listint_t **h)
 {
-	size_t node_count = 0;
+	size_t nnodes = 0;
 	listp_t *hptr, *new, *add;
-	listint_t *current_node;
+	listint_t *curr;
 
 	hptr = NULL;
-	while (*head != NULL)
+	while (*h != NULL)
 	{
 		new = malloc(sizeof(listp_t));
 
 		if (new == NULL)
 			exit(98);
 
-		new->p = (void *)*head;
+		new->p = (void *)*h;
 		new->next = hptr;
 		hptr = new;
 
@@ -52,21 +52,21 @@ size_t free_listint_safe_custom(listint_t **head)
 		while (add->next != NULL)
 		{
 			add = add->next;
-			if (*head == add->p)
+			if (*h == add->p)
 			{
-				*head = NULL;
-				free_listp2_custom(&hptr);
-				return (node_count);
+				*h = NULL;
+				free_listp2(&hptr);
+				return (nnodes);
 			}
 		}
 
-		current_node = *head;
-		*head = (*head)->next;
-		free(current_node);
-		node_count++;
+		curr = *h;
+		*h = (*h)->next;
+		free(curr);
+		nnodes++;
 	}
 
-	*head = NULL;
-	free_listp2_custom(&hptr);
-	return (node_count);
+	*h = NULL;
+	free_listp2(&hptr);
+	return (nnodes);
 }
