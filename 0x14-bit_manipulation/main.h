@@ -21,7 +21,7 @@ unsigned int binary_to_uint(const char *b);
 /* Function to print the binary representation of an unsigned long int */
 void print_binary(unsigned long int n);
 
-/* Function to calculate the number of bits needed to flip to convert two numbers */
+/* Function to calculate the number of bits needed to convert two numbers */
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 
 /* Function to check the endianness of the system */
