@@ -1,6 +1,5 @@
 #ifndef _IO_
 #define _IO_
-
 /* Function to read a specified number of letters from a text file */
 ssize_t read_textfile(const char *filename, size_t letters);
 
@@ -16,4 +15,4 @@ int _strlen(const char *s);
 /* Function to write a character to standard output */
 int _putchar(char c);
 
-#endif
+#endif /* _IO_ */
