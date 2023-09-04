@@ -11,6 +11,7 @@
 <a href="https://www.example.com/data-science">
   <img src="https://img.shields.io/badge/Topics-Covered%20-blue" alt="Badge" title="Introduction to C Programming">
 </a>
+
 <li>Hello_world</li>
 <li>Variables_if_else_while</li>
 <li>Functions_nested_loops</li>
@@ -27,6 +28,9 @@
 <li>Singly_linked_lists</li>
 <li>Bit_manipulation</li>
 <li></li>
+| Topics         | Brief Info               |
+|-------------------------|--------------------------|
+| [Hello_world](https://github.com/CletsyMedia/alx-low_level_programming/tree/master/0x00-hello_world)     | An introduction to preprocessor, compilation, assembler and linking            |
 
 <h1>Prerequisites</h1>
 <li><a href="https://www.pdfdrive.com/sams-teach-yourself-c-in-24-hours-e17514248.html">Sam Teach Yourself C in 24 Hours</a></li>
