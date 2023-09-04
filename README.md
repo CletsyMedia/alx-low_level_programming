@@ -28,9 +28,13 @@
 <li>Singly_linked_lists</li>
 <li>Bit_manipulation</li>
 <li></li>
-| Topics         | Brief Info               |
-|-------------------------|--------------------------|
-| [Hello_world](https://github.com/CletsyMedia/alx-low_level_programming/tree/master/0x00-hello_world)     | An introduction to preprocessor, compilation, assembler and linking            |
+
+| #    | Topics                            | Brief Info               |
+|-------------------------|--------------------------------------------------------------------------------------|
+| 1    | [Hello_world](./0x00-hello_world) | An introduction to preprocessor, compilation, assembler and linking.|           |
+
+
+
 
 <h1>Prerequisites</h1>
 <li><a href="https://www.pdfdrive.com/sams-teach-yourself-c-in-24-hours-e17514248.html">Sam Teach Yourself C in 24 Hours</a></li>
