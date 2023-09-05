@@ -34,9 +34,8 @@ This repository contains details of the First Sprint of the ALX-SE Programme. Th
 | 20 | [Bit_manipulation](./0x14-bit_manipulation)  | Navigating the intricate world of bit manipulation and data transformation.          |
 | 21 | [File_I/O](./0x15-file_io/)  | Delving into the realm of data shaping through file input and output operations.          |
 
-
-
 ## Prerequisites
+
 - [Sam Teach Yourself C in 24 Hours](https://www.pdfdrive.com/sams-teach-yourself-c-in-24-hours-e17514248.html)
 - [More About C - Functions](https://www.tutorialspoint.com/cprogramming/c_functions.htm)
 - All files are compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -45,4 +44,5 @@ This repository contains details of the First Sprint of the ALX-SE Programme. Th
 - All C programming files/codes must be in conformity with Betty style.
 
 ## Author
+
 &copy; All Rights Reserved [Cletus Samuel](https://cletsymedia.github.io/Prof-Portfolio/)
