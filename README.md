@@ -33,6 +33,7 @@ This repository contains details of the First Sprint of the ALX-SE Programme. Th
 | 19 | [More_singly_linked_list](./0x13-more_singly_linked_lists)  | Expanding linked lists with grace.          |
 | 20 | [Bit_manipulation](./0x14-bit_manipulation)  | Navigating the intricate world of bit manipulation and data transformation.          |
 | 21 | [File_I/O](./0x15-file_io/)  | Delving into the realm of data shaping through file input and output operations.          |
+| 22 | [Doubly_linked_list](./0x17-doubly_linked_lists/)  |  Like a river of data, flowing forth and back..          |
 
 ## Prerequisites
 
