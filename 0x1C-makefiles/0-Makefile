@@ -1,0 +1,23 @@
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+EXEC = school
+
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+	$(CC) $(OBJ) -o $(EXEC)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(EXEC)
+
+re: fclean all
+
+.PHONY: all clean fclean re
