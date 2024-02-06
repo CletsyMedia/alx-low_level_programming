@@ -15,6 +15,7 @@ int advanced_binary(int *array, size_t size, int value)
 	size_t left = 0, right = size - 1;
 	size_t mid = 0;
 	int index = -1;
+	size_t i;
 
 	if (array == NULL)
 	return (-1);
@@ -22,7 +23,7 @@ int advanced_binary(int *array, size_t size, int value)
 	while (left <= right)
 	{
 	printf("Searching in array: ");
-	for (size_t i = left; i <= right; i++)
+	for (i = left; i <= right; i++)
 	{
 	printf("%d", array[i]);
 	if (i < right)
