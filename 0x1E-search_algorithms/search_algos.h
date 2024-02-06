@@ -30,15 +30,20 @@ void print_array(int *array, size_t left, size_t right);
 /* Binary search for index */
 int binary_search_index(int *array, size_t left, size_t right, int value);
 
-/* Struct for singly linked list node */
+/**
+ * struct listint_s - singly linked list
+ *
+ * @n: Integer
+ * @index: Index of the node in the list
+ * @next: Pointer to the next node
+ *
+ * Description: singly linked list node structure
+ */
 typedef struct listint_s
 {
     int n;
     size_t index;
     struct listint_s *next;
 } listint_t;
-
-/* Jump search in a singly linked list */
-listint_t *jump_list(listint_t *list, size_t size, int value);
 
 #endif

@@ -1,52 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "search_algos.h"
 
-#include <math.h>
+listint_t *create_list(int *array, size_t size);
+void print_list(const listint_t *list);
+void free_list(listint_t *list);
 
 /**
- * jump_list - searches for a value in an array of
- * integers using the Jump search algorithm
+ * main - Entry point
  *
- * @list: input list
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
+ * Return: Always EXIT_SUCCESS
  */
-listint_t *jump_list(listint_t *list, size_t size, int value)
+int main(void)
 {
-	size_t index, k, m;
-	listint_t *prev;
+    listint_t *list, *res;
+    int array[] = {
+        0, 1, 2, 3, 4, 7, 12, 15, 18, 19, 23, 53, 61, 62, 76, 99
+    };
+    size_t size = sizeof(array) / sizeof(array[0]);
 
-	if (list == NULL || size == 0)
-		return (NULL);
+    list = create_list(array, size);
+    print_list(list);
 
-	m = (size_t)sqrt((double)size);
-	index = 0;
-	k = 0;
+    res =  jump_list(list, size, 53);
+    printf("Found %d at index: %lu\n\n", 53, res->index);
+    res =  jump_list(list, size, 2);
+    printf("Found %d at index: %lu\n\n", 2, res->index);
+    res =  jump_list(list, size, 999);
+    printf("Found %d at index: %p\n", 999, (void *) res);
 
-	do {
-		prev = list;
-		k++;
-		index = k * m;
-
-		while (list->next && list->index < index)
-			list = list->next;
-
-		if (list->next == NULL && index != list->index)
-			index = list->index;
-
-		printf("Value checked at index [%d] = [%d]\n", (int)index, list->n);
-
-	} while (index < size && list->next && list->n < value);
-
-	printf("Value found between indexes ");
-	printf("[%d] and [%d]\n", (int)prev->index, (int)list->index);
-
-	for (; prev && prev->index <= list->index; prev = prev->next)
-	{
-		printf("Value checked at index [%d] = [%d]\n", (int)prev->index, prev->n);
-		if (prev->n == value)
-			return (prev);
-	}
-
-	return (NULL);
+    free_list(list);
+    return (EXIT_SUCCESS);
 }
