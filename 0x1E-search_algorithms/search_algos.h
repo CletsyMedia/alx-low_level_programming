@@ -31,3 +31,4 @@ void print_array(int *array, size_t left, size_t right);
 int binary_search_index(int *array, size_t left, size_t right, int value);
 
 #endif
+
