@@ -9,7 +9,7 @@
 */
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t index = 1, r = 0, move;
+  size_t index = 1, r = 0, move;
 
 	if (array)
 	{
@@ -33,4 +33,5 @@ int exponential_search(int *array, size_t size, int value)
 				r = move - 1;
 		}
 	}
+	return (-1);
 }
