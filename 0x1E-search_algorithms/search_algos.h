@@ -30,5 +30,15 @@ void print_array(int *array, size_t left, size_t right);
 /* Binary search for index */
 int binary_search_index(int *array, size_t left, size_t right, int value);
 
-#endif
+/* Struct for singly linked list node */
+typedef struct listint_s
+{
+    int n;
+    size_t index;
+    struct listint_s *next;
+} listint_t;
 
+/* Jump search in a singly linked list */
+listint_t *jump_list(listint_t *list, size_t size, int value);
+
+#endif
