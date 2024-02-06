@@ -9,16 +9,14 @@
  */
 void print_range(int *array, size_t start, size_t end)
 {
-	size_t i;
-
-	printf("Searching in array: ");
-	for (i = start; i <= end; i++)
-	{
-	printf("%d", array[i]);
-	if (i != end)
-	printf(", ");
-	}
-	printf("\n");
+    printf("Searching in array: ");
+    for (size_t i = start; i <= end; i++)
+    {
+        printf("%d", array[i]);
+        if (i != end)
+            printf(", ");
+    }
+    printf("\n");
 }
 
 /**
@@ -31,51 +29,43 @@ void print_range(int *array, size_t start, size_t end)
  */
 int exponential_search(int *array, size_t size, int value)
 {
-	if (array == NULL)
-	{
-	return (-1);
-	}
-	if (size == 0)
-	{
-	return (-1);
-	}
+    if (array == NULL)
+        return -1;
 
-	size_t bound;
-	size_t start;
-	size_t end;
+    if (size == 0)
+        return -1;
 
-	bound = 1;
+    size_t bound = 1;
+    while (bound < size && array[bound] < value)
+    {
+        printf("Value checked array[%lu] = [%d]\n", bound, array[bound]);
+        bound *= 2;
+    }
 
-	while (bound < size && array[bound] < value)
-	{
-	printf("Value checked array[%lu] = [%d]\n", bound, array[bound]);
-	bound *= 2;
-	}
+    size_t start = bound / 2;
+    size_t end = (bound < size) ? bound : size - 1;
+    printf("Value found between indexes [%lu] and [%lu]\n", start, end);
+    print_range(array, start, end);
 
-	start = bound / 2;
-	end = (bound < size) ? bound : size - 1;
+    while (start <= end)
+    {
+        size_t mid = (start + end) / 2;
 
-	printf("Value found between indexes [%lu] and [%lu]\n", start, end);
-	print_range(array, start, end);
-	while (start <= end)
-	{
-	size_t mid = (start + end) / 2;
+        if (array[mid] == value)
+            return mid;
+        else if (array[mid] < value)
+        {
+            printf("Searching in array: ");
+            print_range(array, mid + 1, end);
+            start = mid + 1;
+        }
+        else
+        {
+            printf("Searching in array: ");
+            print_range(array, start, mid - 1);
+            end = mid - 1;
+        }
+    }
 
-	printf("Searching in array: ");
-	print_range(array, start, end);
-
-	if (array[mid] == value)
-	{
-	return (mid);
-	}
-	else if (array[mid] < value)
-	{
-	start = mid + 1;
-	}
-	else
-	{
-	end = mid - 1;
-	}
-	}
-	return (-1);
+    return (-1);
 }
