@@ -1,46 +1,53 @@
 #include "search_algos.h"
+#include <stdio.h>
 
 /**
- * linear_skip - searches for a value in a skip list
+ * linear_skip - Searches for a value in a sorted skip list of integers.
+ * @list: Pointer to the head of the skip list to search in.
+ * @value: Value to search for.
  *
- * @list: input list
- * @value: value to search in
- * Return: index of the number
+ * Return: Pointer to the first node where value is located,
+ * or NULL if not found.
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-  skiplist_t *go;
+	skiplist_t *express = NULL, *prev = NULL;
 
-  if (list == NULL)
-    return (NULL);
+	if (list == NULL)
+	return (NULL);
 
-  go = list;
+	/* Find the express lane */
+	express = list->express;
+	while (express)
+	{
+	printf("Value checked at index [%lu] = [%d]\n", express->index, express->n);
+	if (express->n >= value)
+	{
+	printf("Value found between indexes [%lu] and [%lu]\n",
+prev->index, express->index);
+	break;
+	}
+	prev = express;
+	express = express->express;
+	}
 
-  do
-  {
-    list = go;
-    go = go->express;
-    printf("Value checked at index ");
-    printf("[%d] = [%d]\n", (int)go->index, go->n);
-  } while (go->express && go->n < value);
+	/* If the express lane is NULL, update the express lane to the end */
+	if (express == NULL)
+	{
+	while (prev->next)
+	prev = prev->next;
+	printf("Value found between indexes [%lu] and [%lu]\n",
+prev->index, prev->index);
+	}
 
-  if (go->express == NULL)
-  {
-    list = go;
-    while (go->next)
-      go = go->next;
-  }
+	/* Search in the range between prev and express */
+	while (prev && prev->index <= express->index)
+	{
+	printf("Value checked at index [%lu] = [%d]\n", prev->index, prev->n);
+	if (prev->n == value)
+	return (prev);
+	prev = prev->next;
+	}
 
-  printf("Value found between indexes ");
-  printf("[%d] and [%d]\n", (int)list->index, (int)go->index);
-
-  while (list != go->next)
-  {
-    printf("Value checked at index [%d] = [%d]\n", (int)list->index, list->n);
-    if (list->n == value)
-      return (list);
-    list = list->next;
-  }
-
-  return (NULL);
+	return (NULL);
 }
