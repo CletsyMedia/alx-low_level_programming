@@ -11,28 +11,28 @@
  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t low = 0;
-	size_t high = size - 1;
-	size_t pos;
+	size_t inter = 0, s = size - 1, move;
 
-	if (array == NULL)
-	return (-1);
-
-	while (low <= high && value >= array[low] && value <= array[high])
+	if (array)
 	{
-	pos = low + (((double)(high - low) /
-	(array[high] - array[low])) * (value - array[low]));
-
-	printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
-
-	if (array[pos] == value)
-	return (pos);
-	else if (array[pos] < value)
-	low = pos + 1;
-	else
-	high = pos - 1;
+		while (inter <= s)
+		{
+			move = inter + (((double)(s - inter) / (array[s] - array[inter])) *
+					(value - array[inter]));
+			if (move < size)
+				printf("Value checked array[%lu] = [%d]\n", move, array[move]);
+			else
+			{
+				printf("Value checked array[%lu] is out of range\n", move);
+				break;
+			}
+			if (array[move] == value)
+				return (move);
+			if (array[move] < value)
+				inter = move + 1;
+			else
+				s = move - 1;
+		}
 	}
-
-	printf("Value checked array[%lu] is out of range\n", pos);
 	return (-1);
 }
