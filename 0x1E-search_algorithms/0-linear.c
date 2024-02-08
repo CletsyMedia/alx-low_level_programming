@@ -11,18 +11,20 @@
  * Return: The first index where value is located,
  *	or -1 if value is not present in array or array is NULL
  */
-int linear_search(int *array, size_t size, int value)
+int linear_search(const int *array, size_t size, int value)
 {
-	size_t i;
+	size_t index;
 
 	if (array == NULL)
 	return (-1);
 
-	for (i = 0; i < size; i++)
+	for (index = 0; index < size; index++)
 	{
-	printf("Value checked array[%lu] = [%d]\n", i, array[i]);
-	if (array[i] == value)
-	return (i);
+	if (array[index] == value)
+	{
+	printf("Value checked array[%lu] = [%d]\n", index, array[index]);
+	return (index);
+	}
 	}
 
 	return (-1);
